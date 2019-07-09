@@ -13,10 +13,17 @@ export const Home: React.FC = memo(() => {
   const [dataState, setDataState] = useState(arr);
 
   useEffect(() => {
-    axios.get(loadData()).then(res => {
-      const arr2: Rate[] = res.data.filter((item: Rate) => item.Cur_Abbreviation !== 'XDR') as Rate[];
-      setDataState(arr2);
-    });
+    axios
+      .get(loadData())
+      .then(res => {
+        const arr2: Rate[] = res.data.filter(
+          (item: Rate) => item.Cur_Abbreviation !== 'XDR',
+        ) as Rate[];
+        setDataState(arr2);
+      })
+      .catch(error => {
+        throw new TypeError(error);
+      });
   }, []);
 
   return (
