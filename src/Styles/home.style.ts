@@ -6,5 +6,11 @@ export const useStyles = makeStyles((theme: Theme) =>
             margin: '0 auto',
             width: '1000px',
         },
+        search__input: {
+            width: '400px',
+        },
+        search: {
+            textAlign: 'center',
+        },
     }),
 );
