@@ -12,13 +12,7 @@ export const Home: React.FC = memo(() => {
   const classes = useStyles();
 
   const arr: Rate[] = [];
-  const currency: ConvertCurrency = {
-    BYN: 0,
-    USD: 0,
-    EUR: 0,
-    RUB: 0,
-    PLN: 0,
-  };
+  const currency: ConvertCurrency[] = [];
 
   const [dataState, setDataState] = useState(arr);
   const [dataTempState, setDataTempState] = useState(arr);
@@ -32,26 +26,37 @@ export const Home: React.FC = memo(() => {
         const arr2: Rate[] = res.data.filter(
           (item: Rate) => item.Cur_Abbreviation !== 'XDR',
         ) as Rate[];
-        const cur: ConvertCurrency = {
-          BYN: 0,
-          USD: 0,
-          EUR: 0,
-          RUB: 0,
-          PLN: 0,
-        };
+        const cur: ConvertCurrency[] = [];
         for (const item of arr2) {
           if (item.Cur_Abbreviation === 'USD') {
-            cur.USD = item.Cur_OfficialRate;
-          } else if (item.Cur_Abbreviation === 'EUR') {
-            cur.EUR = item.Cur_OfficialRate;
-          } else if (item.Cur_Abbreviation === 'RUB') {
-            cur.RUB = item.Cur_OfficialRate;
-          } else if (item.Cur_Abbreviation === 'PLN') {
-            cur.PLN = item.Cur_OfficialRate;
-          } else {
-            cur.BYN = 1;
+            cur.push({
+              label: item.Cur_Abbreviation,
+              value: item.Cur_OfficialRate,
+            });
+          }
+          if (item.Cur_Abbreviation === 'EUR') {
+            cur.push({
+              label: item.Cur_Abbreviation,
+              value: item.Cur_OfficialRate,
+            });
+          }
+          if (item.Cur_Abbreviation === 'RUB') {
+            cur.push({
+              label: item.Cur_Abbreviation,
+              value: item.Cur_OfficialRate,
+            });
+          }
+          if (item.Cur_Abbreviation === 'PLN') {
+            cur.push({
+              label: item.Cur_Abbreviation,
+              value: item.Cur_OfficialRate,
+            });
           }
         }
+        cur.push({
+          label: 'BYN',
+          value: 1,
+        });
         setCurrencies(cur);
         setDataState(arr2);
         setDataTempState(arr2);
@@ -70,9 +75,7 @@ export const Home: React.FC = memo(() => {
 
   return (
     <div className={classes.body}>
-      <div className={classes.title}>
-        Home page!
-      </div>
+      <div className={classes.title}>Home page!</div>
       <div className={classes.search}>
         <TextField
           label="Search"
