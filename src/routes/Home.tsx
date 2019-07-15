@@ -53,7 +53,7 @@ export const Home: React.FC = memo(() => {
             });
           }
         }
-        cur.push({
+        cur.unshift({
           label: 'BYN',
           value: 1,
         });
