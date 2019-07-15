@@ -14,17 +14,13 @@ export function searchByAbbr(str: string, tempRateList: Rate[]): Rate[] {
     return tempRateList.filter((item: Rate) => item.Cur_Abbreviation.toLowerCase().match(str.toLocaleLowerCase()));
 }
 
-export function reBuildToArr(obj: ConvertCurrency): string [] {
-    return [obj.BYN as unknown as string, obj.EUR as unknown as string, obj.PLN as unknown as string, obj.RUB as unknown as string, obj.USD as unknown as string];
-}
+// export function convertCurrency(byn: number, usd: number, eur: number, rub: number, pln: number): ConvertCurrency {
 
-export function convertCurrency(byn: number, usd: number, eur: number, rub: number, pln: number): ConvertCurrency {
-
-    return {
-        BYN: byn,
-        USD: usd,
-        EUR: eur,
-        RUB: rub,
-        PLN: pln,
-    };
-}
+//     return {
+//         BYN: byn,
+//         USD: usd,
+//         EUR: eur,
+//         RUB: rub,
+//         PLN: pln,
+//     };
+// }
