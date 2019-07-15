@@ -4,25 +4,28 @@ export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         list: {
             listStyleType: 'none',
+            marginBottom: '9vh',
+            marginTop: '2vh',
         },
         list__item_caption: {
             fontWeight: 'bold',
+            fontSize: '2vh',
         },
         list__item: {
-            fontSize: '18px',
-            height: '75px',
-            borderTop: '1px solid black',
-            borderBottom: '1px solid black',
+            fontSize: '1.8vh',
+            height: '7.5vh',
+            borderTop: '0.1vh solid black',
+            borderBottom: '0.1vh solid black',
         },
         list__item_verticalAlign: {
-            lineHeight: '75px',
-            borderTop: '1px solid black',
-            borderBottom: '1px solid black',
+            lineHeight: '7.5vh',
+            borderTop: '0.1vh solid black',
+            borderBottom: '0.1vh solid black',
         },
         list__item_cell: {
             display: 'inline-block',
-            padding: '5px',
-            width: '180px',
+            padding: '0.5vh',
+            width: '18vh',
             textAlign: 'center',
         },
     }),

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import clsx from 'clsx';
-import { useStyles } from '../../Styles/list.style';
+import { useStyles } from '../../styles/list.style';
 import { Link } from 'react-router-dom';
 
 interface Props {

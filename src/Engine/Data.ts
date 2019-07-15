@@ -1,4 +1,5 @@
-import { Rate } from '../Model/Rate';
+import { Rate } from '../model/Rate';
+import { ConvertCurrency } from '../model/ConvertCurrency';
 
 export function loadDataByID(id: number): string {
     const date: Date = new Date();
@@ -11,4 +12,15 @@ export function loadData(): string {
 
 export function searchByAbbr(str: string, tempRateList: Rate[]): Rate[] {
     return tempRateList.filter((item: Rate) => item.Cur_Abbreviation.toLowerCase().match(str.toLocaleLowerCase()));
+}
+
+export function convertCurrency(byn: number, usd: number, eur: number, rub: number, pln: number): ConvertCurrency {
+
+    return {
+        BYN: byn,
+        USD: usd,
+        EUR: eur,
+        RUB: rub,
+        PLN: pln,
+    };
 }

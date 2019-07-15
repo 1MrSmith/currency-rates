@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { useStyles } from '../Styles/about.style';
+import { useStyles } from '../styles/about.style';
 
 export const About: React.FC = memo(() => {
   const classes = useStyles();

@@ -1,9 +1,9 @@
 import React, { memo, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
-import { useStyles } from '../Styles/currency.style';
-import { loadDataByID } from '../Engine/Data';
-import { RateShort } from '../Model/RateShort';
+import { useStyles } from '../styles/currency.style';
+import { loadDataByID } from '../engine/Data';
+import { RateShort } from '../model/RateShort';
 import { RouteComponentProps } from 'react-router-dom';
 
 export const Currency: React.FC<RouteComponentProps<any>> = memo(
@@ -51,7 +51,9 @@ export const Currency: React.FC<RouteComponentProps<any>> = memo(
 
     return (
       <div className={classes.body}>
-        <h3>Chart | ID: {props.match.params.id}</h3>
+        <div className={classes.title}>
+          Chart | ID: {props.match.params.id}
+        </div>
         <article className={classes.canvasContainer}>
           <Line data={data} />
         </article>
