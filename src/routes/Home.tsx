@@ -5,7 +5,7 @@ import { Rate } from '../model/Rate';
 import { ListTo } from '../components/list/ListTo';
 import { useStyles } from '../styles/home.style';
 import { TextField, InputAdornment, Icon } from '@material-ui/core';
-import { Converter } from './Converter';
+import { Converter } from '../components/Converter';
 import { ConvertCurrency } from '../model/ConvertCurrency';
 
 export const Home: React.FC = memo(() => {
