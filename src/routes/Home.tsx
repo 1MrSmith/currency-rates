@@ -89,7 +89,7 @@ export const Home: React.FC = memo(() => {
         />
         <ListTo items={dataState} />
       </div>
-      
+
       <Converter currency={currencies} />
     </div>
   );
