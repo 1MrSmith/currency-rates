@@ -26,8 +26,10 @@ export const Home: React.FC = memo(() => {
         const arr2: Rate[] = res.data.filter(
           (item: Rate) => item.Cur_Abbreviation !== 'XDR',
         ) as Rate[];
+
         const cur: ConvertCurrency[] = [];
-        for (const item of arr2) {
+
+        arr2.map((item: Rate) => {
           if (item.Cur_Abbreviation === 'USD') {
             cur.push({
               label: item.Cur_Abbreviation,
@@ -52,7 +54,8 @@ export const Home: React.FC = memo(() => {
               value: item.Cur_OfficialRate,
             });
           }
-        }
+        });
+
         cur.unshift({
           label: 'BYN',
           value: 1,
