@@ -6,7 +6,7 @@ export const useStyles = makeStyles(() =>
             position: 'fixed',
             left: '0',
             bottom: '0',
-            width: '100vw',
+            width: '100%',
             backgroundColor: 'rgba(0, 0, 0, 0.8)',
             display: 'flex',
             flexDirection: 'row',

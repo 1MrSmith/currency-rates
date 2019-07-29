@@ -9,7 +9,6 @@ interface Props {
 
 export const Converter: React.FC<Props> = memo((props: Props) => {
   const classes = useStyles();
-
   return (
     <div className={classes.footer}>
       {props.currency.map((item: ConvertCurrency, i: number) => (
