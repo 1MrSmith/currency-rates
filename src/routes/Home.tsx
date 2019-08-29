@@ -1,10 +1,19 @@
-import React, { memo, useEffect, useState, useCallback } from 'react';
+import React, {
+  memo,
+  useEffect,
+  useState,
+  useCallback } from 'react';
 import axios from 'axios';
-import { loadData, searchByAbbr } from '../engine/Data';
+import {
+  loadData,
+  searchByAbbr} from '../engine/Data';
 import { Rate } from '../model/Rate';
 import { ListTo } from '../components/list/ListTo';
 import { useStyles } from '../styles/home.style';
-import { TextField, InputAdornment, Icon } from '@material-ui/core';
+import {
+  TextField,
+  InputAdornment,
+  Icon } from '@material-ui/core';
 import { Converter } from '../components/Converter';
 import { ConvertCurrency } from '../model/ConvertCurrency';
 
@@ -45,13 +54,13 @@ export const Home: React.FC = memo(() => {
           if (item.Cur_Abbreviation === 'RUB') {
             cur.push({
               label: item.Cur_Abbreviation,
-              value: item.Cur_OfficialRate,
+              value: item.Cur_OfficialRate / 100,
             });
           }
           if (item.Cur_Abbreviation === 'PLN') {
             cur.push({
               label: item.Cur_Abbreviation,
-              value: item.Cur_OfficialRate,
+              value: item.Cur_OfficialRate / 10,
             });
           }
         });
@@ -69,7 +78,7 @@ export const Home: React.FC = memo(() => {
       });
   }, []);
 
-  const changeInput = useCallback(
+  const changeInputSearch = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setDataState(searchByAbbr(e.target.value, dataTempState));
     },
@@ -84,7 +93,7 @@ export const Home: React.FC = memo(() => {
           label="Search"
           placeholder="Search necessary currency"
           className={classes.search__input}
-          onChange={changeInput}
+          onChange={changeInputSearch}
           InputProps={{
             endAdornment: (
               <InputAdornment position="start">

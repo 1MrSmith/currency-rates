@@ -14,13 +14,18 @@ export function searchByAbbr(str: string, tempRateList: Rate[]): Rate[] {
     return tempRateList.filter((item: Rate) => item.Cur_Abbreviation.toLowerCase().match(str.toLocaleLowerCase()));
 }
 
-// export function convertCurrency(byn: number, usd: number, eur: number, rub: number, pln: number): ConvertCurrency {
+export function converter(e: React.ChangeEvent<HTMLInputElement>, currencies: ConvertCurrency[]): void {
+    const array = document.getElementsByTagName('input');
 
-//     return {
-//         BYN: byn,
-//         USD: usd,
-//         EUR: eur,
-//         RUB: rub,
-//         PLN: pln,
-//     };
-// }
+    if (e.target.name === 'BYN') {
+        if (e.target.value === '1') {
+            for (let index = 1; index < array.length; index += 1) {
+                array[index].value = String(currencies[index - 1].value);
+            }
+        } else {
+            for (let index = 1; index < array.length; index += 1) {
+                array[index].value = String(parseFloat(e.target.value) / currencies[index - 1].value);
+            }
+        }
+    }
+}
