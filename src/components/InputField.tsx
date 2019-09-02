@@ -12,7 +12,7 @@ interface Props {
 export const InputField: React.FC<Props> = memo((props: Props) => {
   const classes = useStyles();
 
-  const [convert, SetConvert] = useState({value : props.value});
+  const [convert, SetConvert] = useState({value : 0});
 
   const changeInput = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {

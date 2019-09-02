@@ -18,14 +18,8 @@ export function converter(e: React.ChangeEvent<HTMLInputElement>, currencies: Co
     const array = document.getElementsByTagName('input');
 
     if (e.target.name === 'BYN') {
-        if (e.target.value === '1') {
-            for (let index = 1; index < array.length; index += 1) {
-                array[index].value = String(currencies[index - 1].value);
-            }
-        } else {
-            for (let index = 1; index < array.length; index += 1) {
-                array[index].value = String(parseFloat(e.target.value) / currencies[index - 1].value);
-            }
+        for (let index = 1; index < array.length; index += 1) {
+            array[index].value = String(parseFloat(e.target.value) / currencies[index - 1].value);
         }
     }
 }

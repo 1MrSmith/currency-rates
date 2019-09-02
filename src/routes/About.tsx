@@ -8,7 +8,7 @@ export const About: React.FC = memo(() => {
     <div className={classes.body}>
       <h3>About page!</h3>
       <div className={classes.describe}>
-        It's the test project for understanding react
+        Data have been received from nbrb.by
       </div>
     </div>
   );
