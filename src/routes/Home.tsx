@@ -6,7 +6,7 @@ import React, {
 import axios from 'axios';
 import {
   loadData,
-  searchByAbbr} from '../engine/Data';
+  searchByAbbr} from '../data-entities/Data';
 import { Rate } from '../model/Rate';
 import { ListTo } from '../components/list/ListTo';
 import { useStyles } from '../styles/home.style';
