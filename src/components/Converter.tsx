@@ -1,4 +1,9 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, {
+  memo,
+  useCallback,
+  useState,
+} from 'react';
+
 import { useStyles } from '../styles/converter.style';
 import { ConvertCurrency } from '../model/ConvertCurrency';
 import { InputField } from './InputField';

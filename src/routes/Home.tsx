@@ -2,18 +2,25 @@ import React, {
   memo,
   useEffect,
   useState,
-  useCallback } from 'react';
+  useCallback,
+} from 'react';
+
 import axios from 'axios';
 import {
   loadData,
-  searchByAbbr} from '../data-entities/Data';
+  searchByAbbr,
+} from '../data-entities/Data';
+
 import { Rate } from '../model/Rate';
 import { ListTo } from '../components/list/ListTo';
 import { useStyles } from '../styles/home.style';
+
 import {
   TextField,
   InputAdornment,
-  Icon } from '@material-ui/core';
+  Icon,
+} from '@material-ui/core';
+
 import { Converter } from '../components/Converter';
 import { ConvertCurrency } from '../model/ConvertCurrency';
 

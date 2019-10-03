@@ -1,8 +1,13 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, {
+  memo,
+  useEffect,
+  useState,
+} from 'react';
+
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import { useStyles } from '../styles/currency.style';
-import { loadDataByID } from '../engine/Data';
+import { loadDataByID } from '../data-entities/Data';
 import { RateShort } from '../model/RateShort';
 import { RouteComponentProps } from 'react-router-dom';
 

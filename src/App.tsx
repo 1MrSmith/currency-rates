@@ -1,6 +1,12 @@
 import React from 'react';
 import './App.css';
-import { Route, Redirect, Switch } from 'react-router';
+
+import {
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router';
+
 import { Home } from './routes/Home';
 import { Currency } from './routes/Currency';
 import { About } from './routes/About';
