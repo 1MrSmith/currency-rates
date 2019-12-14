@@ -3,7 +3,7 @@ import { ConvertCurrency } from '../model/ConvertCurrency';
 
 export function loadDataByID(id: number): string {
     const date: Date = new Date();
-    return 'https://www.nbrb.by/API/ExRates/Rates/Dynamics/' + id + '?startDate=' + [date.getFullYear(), date.getMonth(), date.getDay()].join('-') + '&endDate=' + [date.getFullYear(), date.getMonth() + 1, date.getDay()].join('-');
+    return 'https://www.nbrb.by/API/ExRates/Rates/Dynamics/' + id + '?startDate=' + [date.getFullYear(), date.getMonth(), date.getDate()].join('-') + '&endDate=' + [date.getFullYear(), date.getMonth() + 1, date.getDate()].join('-');
 }
 
 export function loadData(): string {
