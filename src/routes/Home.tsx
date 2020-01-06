@@ -6,6 +6,10 @@ import React, {
 } from 'react';
 
 import axios from 'axios';
+
+import { css } from '@emotion/core';
+import { BeatLoader } from 'react-spinners';
+
 import {
   loadData,
   searchByAbbr,
@@ -24,6 +28,11 @@ import {
 import { Converter } from '../components/Converter';
 import { ConvertCurrency } from '../model/ConvertCurrency';
 
+const override = css`
+  display: block;
+  margin: 0 auto;
+`;
+
 export const Home: React.FC = memo(() => {
   const classes = useStyles();
 
@@ -31,6 +40,7 @@ export const Home: React.FC = memo(() => {
   const currency: ConvertCurrency[] = [];
 
   const [dataState, setDataState] = useState(arr);
+  const [isLoadSpinner, setFlagLoadSpinner] = useState(true);
   const [dataTempState, setDataTempState] = useState(arr);
 
   const [currencies, setCurrencies] = useState(currency);
@@ -76,6 +86,11 @@ export const Home: React.FC = memo(() => {
           label: 'BYN',
           value: 1,
         });
+
+        if (arr2.length !== 0) {
+          setFlagLoadSpinner(false);
+        }
+
         setCurrencies(cur);
         setDataState(arr2);
         setDataTempState(arr2);
@@ -110,6 +125,11 @@ export const Home: React.FC = memo(() => {
           }}
         />
         <ListTo items={dataState} />
+        <BeatLoader
+          css={override}
+          color={'#404040'}
+          loading={isLoadSpinner}
+        />
       </div>
 
       <Converter currency={currencies} />
